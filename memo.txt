@@ -1,0 +1,7 @@
+testing gitignore 
+ansible all -i hosts -m ping
+ansible-playbook -i hosts site.yml
+
+
+
+ansible all -i hosts -m setup

@@ -1,0 +1,6 @@
+---
+- name: Playbookチュートリアル
+  hosts: all
+  # skips gatherring facts
+  #gather_facts: false
+  tasks:
