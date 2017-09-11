@@ -3,4 +3,27 @@
   hosts: all
   # skips gatherring facts
   #gather_facts: false
+  #
+  # Becoming super user
+  become: true
   tasks:
+    - name: libselinux-pythonをインストール
+      yum:
+        name: libselinux-python
+        state: present
+
+    - name: EPELリポジトリをインストール
+      yum:
+        name: epel-release
+        state: present
+    - name: Nginxのインストール
+      yum:
+        name: nginx
+        state: present
+    - name: Nginxサービスの起動と自動起動設定
+      service:
+        name: nginx
+        state: started
+        enabled: true
+
+

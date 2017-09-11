@@ -5,3 +5,7 @@ ansible-playbook -i hosts site.yml
 
 
 ansible all -i hosts -m setup
+ansible-playbook -i hosts site.yml
+ansible-doc file
+ansible-doc command
+ansible-doc raw
