@@ -9,3 +9,25 @@ ansible-playbook -i hosts site.yml
 ansible-doc file
 ansible-doc command
 ansible-doc raw
+curl -O https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/vagrant.py
+pip2 install paramiko
+pip2 install -U paramiko
+
+
+#./vagrant.py --list が動かない。
+sudo pip install virtualenv
+virtualenv .
+source bin/activate
+pip install ansible
+
+
+# 動いた
+./vagrant.py --list
+
+
+#./vagrant.py --list が動かない。
+sudo pip2 install virtualenv
+virtualenv .
+source bin/activate
+pip install ansible
+./vagrant.py --list
