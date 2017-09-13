@@ -31,3 +31,11 @@ virtualenv .
 source bin/activate
 pip install ansible
 ./vagrant.py --list
+
+
+# Chapter 5 WordPress
+# Role initialize
+roles=(common mariadb php-fpm wordpress)
+for role in $roles[@];do ansible-galaxy init --init-path="roles" $role;done
+
+
