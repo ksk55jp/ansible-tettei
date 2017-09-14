@@ -38,4 +38,9 @@ pip install ansible
 roles=(common mariadb php-fpm wordpress)
 for role in $roles[@];do ansible-galaxy init --init-path="roles" $role;done
 
+# RESTART part testing
+ansible all -i vagrant.py -m selinux -a "state=disabled" --become
+vagrant reload
+# once vagrant completed restarting, verify below
+ansible-playbook -i vagrant.py wordpress.yml --tags="common"
 
