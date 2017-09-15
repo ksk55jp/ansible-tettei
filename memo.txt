@@ -44,3 +44,5 @@ vagrant reload
 # once vagrant completed restarting, verify below
 ansible-playbook -i vagrant.py wordpress.yml --tags="common"
 
+# To format json on vim, 
+'<,'>!python -m json.tool
