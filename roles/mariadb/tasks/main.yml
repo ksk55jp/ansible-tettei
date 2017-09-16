@@ -30,12 +30,10 @@
     collation: "{{ item.collation|default('utf8_general_ci') }}"
   with_items: "{{ mariadb_databases }}"
 
-- name: システムDBユーザーの作成
+- name: システム用ユーザーの作成
   mysql_user:
     name: "{{ item.name }}"
     password: "{{ item.password }}"
     host: "{{ item.host|default('localhost') }}"
     priv: "{{ item.priv|default('') }}"
   with_items: "{{ mariadb_users }}"
-
-
